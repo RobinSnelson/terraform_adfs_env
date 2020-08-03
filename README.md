@@ -17,6 +17,11 @@ the basic environment has 4 servers, 2 ADFS/DC and 2 WAP servers, I decided that
 | ADFS      | 2     |   Internal |
 | WAP | 2      |    DMZ |
 
+### Pre Reqs
+
+The terraform.tfvars file needs to be created, there is an example file that lists the values required.
+
+
 ### Resources Built
 
 #### Virtual Network
@@ -79,5 +84,13 @@ There's no need for load balancing here and up to now nothing is installed onto 
 
 ### Bastion Server
 
+This is a reasonably new to me Bastion servers on Azure. I added this as a practice, much better than having a jump server and fairly easy to set up, with the security managed for you except for teh ability to connect and that can be managed through roles.
 
+This service is set up in its own Resource group and REQUIRES a subnet named AzureBastionServer which we create when we build the whole environment, so the ADFS terraform will be ran first, then run the bastion terraform
+
+the code builds
+
+1. The resource group to contain the bastion server service
+2. The Public IP for the bastion server service
+3. The Bastion Server service itself
 
