@@ -9,6 +9,7 @@ $header = @"
 
 #Install IIS
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
+Install-WindowsFeature -name ADFS-Federation -IncludeManagementTools
 
 #Query Azure Instance Metadata service
 $metadata = Invoke-RestMethod -Headers @{"Metadata"="true"} -URI http://169.254.169.254/metadata/instance?api-version=2017-08-01 -Method get

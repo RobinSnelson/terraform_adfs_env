@@ -360,3 +360,4 @@ Files/
 *.backup
 *.tfstate
 *.info
+*.tfvars
